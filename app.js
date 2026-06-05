@@ -1,5 +1,32 @@
 // Code Island — marketing site interactions.
 
+// ============================================================================
+//  💳  CHECKOUT — paste your Stripe Payment Link below (e.g.
+//      "https://buy.stripe.com/abc123"). Until it's set, the Buy buttons show a
+//      reminder instead of navigating to a dead link.
+// ============================================================================
+const CHECKOUT_URL = "";
+
+(function wireCheckout() {
+  document.querySelectorAll(".buy").forEach((el) => {
+    // Nav/hero buttons (href="#pricing") just scroll to the offer; only the real
+    // checkout buttons (href="#") open Stripe.
+    if (el.getAttribute("href") === "#pricing") return;
+    if (CHECKOUT_URL) {
+      el.setAttribute("href", CHECKOUT_URL);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    } else {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert(
+          "Checkout isn't connected yet.\n\nAdd your Stripe Payment Link to CHECKOUT_URL at the top of app.js."
+        );
+      });
+    }
+  });
+})();
+
 // ---------- Starfield ----------
 (function stars() {
   const field = document.getElementById("starfield");
