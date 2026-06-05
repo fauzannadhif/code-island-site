@@ -1,9 +1,9 @@
 // Code Island — marketing site interactions.
 
 // ============================================================================
-//  💳  CHECKOUT — paste your Stripe Payment Link below (e.g.
-//      "https://buy.stripe.com/abc123"). Until it's set, the Buy buttons show a
-//      reminder instead of navigating to a dead link.
+//  💳  CHECKOUT — paste your Gumroad product link below (e.g.
+//      "https://yourname.gumroad.com/l/code-island"). Until it's set, the Buy
+//      buttons show a reminder instead of navigating to a dead link.
 // ============================================================================
 const CHECKOUT_URL = "";
 
@@ -20,7 +20,7 @@ const CHECKOUT_URL = "";
       el.addEventListener("click", (e) => {
         e.preventDefault();
         alert(
-          "Checkout isn't connected yet.\n\nAdd your Stripe Payment Link to CHECKOUT_URL at the top of app.js."
+          "Checkout isn't connected yet.\n\nAdd your Gumroad product link to CHECKOUT_URL at the top of app.js."
         );
       });
     }
